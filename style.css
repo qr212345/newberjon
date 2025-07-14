@@ -1,0 +1,182 @@
+/* style.css */
+
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  margin: 0; padding: 0; background: #f0f0f5; color: #222;
+  display: flex; flex-direction: column; min-height: 100vh;
+}
+header {
+  background: #283593; color: white;
+  padding: 1rem;
+  display: flex; justify-content: space-between; align-items: center;
+  font-weight: bold; font-size: 1.2rem;
+}
+#toggleMenu {
+  font-size: 1.4rem; background: none; border: none; color: white;
+  cursor: pointer;
+}
+#sidebar {
+  background: #3949ab;
+  padding: 1rem;
+  display: flex; flex-direction: column;
+  position: fixed; top: 56px; left: 0; width: 180px; height: calc(100% - 56px);
+  overflow-y: auto;
+  box-shadow: 2px 0 5px rgba(0,0,0,0.2);
+}
+#sidebar button {
+  background: #5c6bc0;
+  border: none;
+  margin-bottom: 0.5rem;
+  color: white;
+  padding: 0.6rem 1rem;
+  cursor: pointer;
+  border-radius: 4px;
+  font-weight: 600;
+  transition: background 0.3s ease;
+}
+#sidebar button:hover, #sidebar button:focus {
+  background: #7986cb;
+  outline: none;
+}
+
+main {
+  margin-left: 0;
+  padding: 1rem;
+  flex-grow: 1;
+}
+#reader, #rankingReader {
+  width: 320px; max-width: 100%;
+  margin: 1rem auto;
+}
+#messageArea {
+  text-align: center;
+  font-weight: bold;
+  margin: 0.5rem auto 1rem;
+  color: #2e7d32;
+  min-height: 1.2em;
+}
+
+/* 座席表示 */
+.seat-block {
+  background: white;
+  margin: 0.8rem auto;
+  padding: 1rem;
+  border-radius: 8px;
+  max-width: 400px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+}
+.seat-block h3 {
+  margin: 0 0 0.5rem 0;
+  font-size: 1.1rem;
+  display: flex; justify-content: space-between; align-items: center;
+  color: #1a237e;
+}
+.remove-button {
+  cursor: pointer;
+  color: #e53935;
+  font-weight: bold;
+  margin-left: 10px;
+  user-select: none;
+}
+.player-entry {
+  display: flex;
+  justify-content: space-between;
+  padding: 0.3rem 0;
+  border-top: 1px solid #ddd;
+  font-size: 0.95rem;
+}
+.player-entry:first-child {
+  border-top: none;
+}
+.title-badge {
+  margin-left: 0.4rem;
+  font-weight: bold;
+  border-radius: 4px;
+  padding: 0 4px;
+  user-select: none;
+}
+
+/* 称号ごとのアニメ */
+.title-👑 {
+  color: #fdd835;
+  position: relative;
+  animation: thunder 2s infinite;
+}
+.title-🥈 {
+  color: #90caf9;
+  position: relative;
+  animation: wind 3s linear infinite;
+}
+.title-🥉 {
+  color: #ef6c00;
+  position: relative;
+  animation: fire 1.5s ease-in-out infinite;
+}
+
+@keyframes thunder {
+  0%, 100% { text-shadow: 0 0 5px #fdd835, 0 0 10px #fbc02d; }
+  50% { text-shadow: 0 0 15px #fffde7, 0 0 25px #fbc02d; }
+}
+@keyframes wind {
+  0% { text-shadow: 0 0 8px #90caf9; transform: rotate(0deg); }
+  100% { text-shadow: 0 0 12px #90caf9; transform: rotate(360deg); }
+}
+@keyframes fire {
+  0%, 100% { text-shadow: 0 0 5px #ef6c00; color: #ef6c00; }
+  50% { text-shadow: 0 0 15px #ff8f00; color: #ff8f00; }
+}
+
+/* 順位リスト */
+#rankingList {
+  list-style: none;
+  max-width: 300px;
+  margin: 1rem auto;
+  padding: 0;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  background: white;
+}
+#rankingList li {
+  padding: 0.5rem 1rem;
+  border-bottom: 1px solid #eee;
+  cursor: move;
+  user-select: none;
+}
+#rankingList li:last-child {
+  border-bottom: none;
+}
+#rankingList li.dragging {
+  opacity: 0.6;
+  background: #c5cae9;
+}
+
+/* ボタン */
+button {
+  cursor: pointer;
+  border-radius: 6px;
+  border: none;
+  padding: 0.5rem 1rem;
+  font-weight: 600;
+  background-color: #3949ab;
+  color: white;
+  margin: 0.3rem;
+  transition: background-color 0.3s ease;
+}
+button:hover, button:focus {
+  background-color: #5c6bc0;
+  outline: none;
+}
+
+/* メディア */
+@media (min-width: 600px) {
+  main {
+    margin-left: 200px;
+  }
+  #sidebar {
+    position: fixed;
+    top: 56px;
+    left: 0;
+    bottom: 0;
+    display: flex !important;
+  }
+}
