@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>ババ抜き大会管理</title>
+  <link rel="stylesheet" href="style.css" />
+  <script src="qrcode.min.js"></script>
+</head>
+<body>
+  <header>
+    <h1>ババ抜き大会管理</h1>
+    <button id="toggleMenu" aria-label="メニュー切替">≡</button>
+  </header>
+
+  <aside id="sidebar" hidden>
+    <nav>
+      <button data-nav="scan">QR読み取り</button>
+      <button data-nav="ranking">順位登録</button>
+      <button id="btnStore">☁ 保存</button>
+      <button id="btnRefresh">☁ 再読込</button>
+      <button id="btnSaveCSV">CSVダウンロード</button>
+      <button id="btnUndo">↩ UNDO ×3</button>
+    </nav>
+  </aside>
+
+  <main>
+    <section id="scanSection">
+      <div id="reader"></div>
+      <div id="messageArea" aria-live="polite"></div>
+      <div id="seatList" role="list"></div>
+    </section>
+
+    <section id="rankingSection" hidden>
+      <div id="rankingReader"></div>
+      <ul id="rankingList" role="list" tabindex="0"></ul>
+      <button id="btnConfirmRanking">順位確定</button>
+    </section>
+  </main>
+
+  <script src="app.js"></script>
+</body>
+</html>
