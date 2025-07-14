@@ -1,6 +1,4 @@
-// app.js 全機能実装
-
-const ENDPOINT = 'https://script.google.com/macros/s/AKfycbwh6sc-zEihv8dW08IQY3YaKQIXU461KhJjf_LeflQF44yH4uNtVMYlKeO2klXg8d2n/exec';
+const ENDPOINT = 'https://script.google.com/macros/s/YOUR_SCRIPT_ID/exec';
 const SECRET = 'kosen-brain-super-secret';
 const SCAN_COOLDOWN_MS = 1500;
 const POLL_INTERVAL_MS = 20000;
@@ -35,7 +33,6 @@ function displayMessage(msg) {
   msgTimer = setTimeout(() => (area.textContent = ''), 3000);
 }
 
-// ローカルストレージ読み込み/保存
 function saveToLocalStorage() {
   localStorage.setItem('seatMap', JSON.stringify(seatMap));
   localStorage.setItem('playerData', JSON.stringify(playerData));
