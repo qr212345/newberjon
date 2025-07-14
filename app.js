@@ -1,6 +1,6 @@
 // app.js 全機能実装
 
-const ENDPOINT = '<<あなたの GAS exec URL >>';
+const ENDPOINT = 'https://script.google.com/macros/s/AKfycbwh6sc-zEihv8dW08IQY3YaKQIXU461KhJjf_LeflQF44yH4uNtVMYlKeO2klXg8d2n/exec';
 const SECRET = 'kosen-brain-super-secret';
 const SCAN_COOLDOWN_MS = 1500;
 const POLL_INTERVAL_MS = 20000;
