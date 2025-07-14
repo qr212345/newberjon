@@ -1,4 +1,4 @@
-const ENDPOINT = 'https://script.google.com/macros/s/YOUR_SCRIPT_ID/exec';
+const ENDPOINT = 'https://script.google.com/macros/s/AKfycbzdH2OC-Kib5XUbZRORh7XP8-ufXa7I2JFyS-mTC47BozSJPT7QM4fNVny65atLI1CG/exec';
 const SECRET = 'kosen-brain-super-secret';
 const SCAN_COOLDOWN_MS = 1500;
 const POLL_INTERVAL_MS = 20000;
